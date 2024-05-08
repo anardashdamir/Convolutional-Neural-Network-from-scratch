@@ -27,7 +27,7 @@ class Adam:
             
 
             layer.v[i] = self.beta1 * layer.v[i] + (1 - self.beta1) * grad
-            layer.s[i] = self.beta1 * layer.s[i] + (1 - self.beta1) * grad**2
+            layer.s[i] = self.beta2 * layer.s[i] + (1 - self.beta2) * grad**2
             
             
             param -= self.lr * layer.v[i] / (np.sqrt(layer.s[i]) + self.epsilon)
